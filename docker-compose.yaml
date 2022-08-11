@@ -7,6 +7,7 @@ networks:
 services:
   reverse-proxy:
     container_name: traefic
+    restart: unless-stopped
     image: traefik:v2.8
     command: --api.insecure=true --providers.docker
     ports:
